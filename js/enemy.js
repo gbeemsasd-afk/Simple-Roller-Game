@@ -11,18 +11,19 @@ Enemy.reset = function () {
   Enemy.rollers = [];
   Enemy.lasers = [];
 
-  // Place enemies throughout the level, but keep the starting area safe.
+  // Only two enemies total.
   var worldWidth = Level.pixelWidth();
-  for (var x = 720; x < worldWidth - 100; x += 720) {
+  var spawnXs = [Math.min(540, worldWidth - 220), Math.min(1120, worldWidth - 120)];
+  for (var i = 0; i < spawnXs.length; i++) {
     Enemy.rollers.push({
-      x: x,
+      x: spawnXs[i],
       y: 0,
       vx: -CONFIG.ENEMY_SPEED,
       vy: 0,
       width: CONFIG.ENEMY_SIZE,
       height: CONFIG.ENEMY_SIZE,
       angle: 0,
-      shotTimer: CONFIG.ENEMY_SHOT_DELAY
+      shotTimer: CONFIG.ENEMY_SHOT_DELAY + i * 40
     });
   }
 };
