@@ -52,7 +52,7 @@ Draw.world = function () {
 
 Draw.block = function (x, y, size) {
   var ctx = Draw.ctx;
-  ctx.fillStyle = "#00cc44";
+  ctx.fillStyle = "#4B0082";
   ctx.fillRect(x, y, size, size);
 };
 
@@ -80,16 +80,16 @@ Draw.finish = function (x, y, size) {
 };
 
 Draw.player = function () {
-  Draw.roller(Player.x, Player.y, Player.angle, "#00cc44");
+  Draw.roller(Player.x, Player.y, Player.angle, "#4B0082");
 };
 
 Draw.enemies = function () {
   for (var i = 0; i < Enemy.rollers.length; i++) {
     var roller = Enemy.rollers[i];
-    Draw.roller(roller.x, roller.y, roller.angle, "#ff2222");
+    Draw.roller(roller.x, roller.y, roller.angle, "#ff00ff");
   }
   var ctx = Draw.ctx;
-  ctx.fillStyle = "#ff2222";
+  ctx.fillStyle = "#ff00ff";
   for (var j = 0; j < Enemy.lasers.length; j++) {
     var laser = Enemy.lasers[j];
     ctx.fillRect(laser.x, laser.y, laser.width, laser.height);
