@@ -25,6 +25,12 @@ Game.update = function () {
     Game.startLevel(Game.levelNumber);
     return;
   }
+  if (Input.nextLevel) {
+    if (Game.levelNumber + 1 < Level.levels.length) {
+      Game.startLevel(Game.levelNumber + 1);
+    }
+    return;
+  }
   if (Game.mode !== "playing") { return; }
 
   Player.update();
@@ -37,7 +43,7 @@ Game.update = function () {
   }
   if (Player.hasWon()) {
     Game.mode = "won";
-    Game.showMessage("You made it. Press R to play again.");
+    Game.showMessage("You made it. Press N for next level or R to play again.");
   }
 };
 
