@@ -52,7 +52,7 @@ Draw.world = function () {
 
 Draw.block = function (x, y, size) {
   var ctx = Draw.ctx;
-  ctx.fillStyle = "#4B0082";
+  ctx.fillStyle = "#ee82ee";
   ctx.fillRect(x, y, size, size);
 };
 
@@ -80,7 +80,7 @@ Draw.finish = function (x, y, size) {
 };
 
 Draw.player = function () {
-  Draw.roller(Player.x, Player.y, Player.angle, "#4B0082");
+  Draw.roller(Player.x, Player.y, Player.angle, "#ee82ee");
 };
 
 Draw.enemies = function () {
